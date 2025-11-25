@@ -4,55 +4,57 @@
     <title>Contacto Eloteando</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <div class="w3-top">
-    <div class="w3-bar w3-white w3-padding w3-card navbar">
+    <div class="w3-bar w3-card navbar">
         <a href="index.html" class="w3-bar-item w3-button">Eloteando</a>
-        <div class="w3-right w3-hide-small">
+
+        <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+           onclick="toggleMenu()">☰</a>
+
+        <div id="menu" class="w3-right w3-hide-small">
             <a href="about.html" class="w3-bar-item w3-button">A cerca de</a>
-            <a href="Menu.html" class="w3-bar-item w3-button">Menú</a>
+            <a href="menu.html" class="w3-bar-item w3-button">Menú</a>
             <a href="contact.html" class="w3-bar-item w3-button w3-light-grey">Contacto</a>
         </div>
     </div>
 </div>
 
-<!-- CONTENIDO -->
-<div class="w3-container w3-padding-64 section">
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("w3-hide-small");
+}
+</script>
+
+<!-- CONTENT -->
+<div class="w3-content w3-padding-64 section">
     <h1>Contacto</h1>
+    <p class="w3-text-blue-grey w3-large"><b>Eloteando, Río Blanco, Veracruz</b></p>
+    <p>Tel: 272-154-4138 | Email: eloteandofloperom@gmail.com</p>
 
-    <p>Envíanos un mensaje o visítanos para disfrutar del mejor sabor.</p>
-
-    <p class="w3-text-blue-grey w3-large"><b>Eloteando, Calle Principal #123, Río Blanco, Veracruz</b></p>
-    <p>Teléfono: 272-154-4138 | Email: eloteandofloperom@gmail.com</p>
-
-    <!-- FORMULARIO FORMSUBMIT -->
     <form action="https://formsubmit.co/eloteandofloperom@gmail.com" method="POST">
-
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="gracias.html">
 
         <p><input class="w3-input w3-padding-16" type="text" name="nombre" placeholder="Nombre" required></p>
         <p><input class="w3-input w3-padding-16" type="email" name="correo" placeholder="Correo" required></p>
         <p><textarea class="w3-input w3-padding-16" name="mensaje" placeholder="Mensaje" required></textarea></p>
-
-        <p><button class="w3-button w3-light-grey w3-section" type="submit">Enviar</button></p>
+        <p><button class="w3-button boton-mapas">Enviar</button></p>
     </form>
 </div>
 
 <!-- FOOTER -->
 <footer class="w3-center w3-light-grey w3-padding-32">
-    <button onclick="window.open('https://maps.app.goo.gl/ZJMytX8dbyYRbk3t6?g_st=aw', '_blank')"
-        class="w3-button boton-mapas">
-        Ver ubicación en Google Maps
-    </button>
+    <button onclick="window.open('https://maps.app.goo.gl/ZJMytX8dbyYRbk3t6?g_st=aw')" 
+        class="w3-button boton-mapas">Ver ubicación</button>
 </footer>
 
 </body>
 </html>
-
